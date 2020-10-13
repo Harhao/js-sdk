@@ -1,0 +1,31 @@
+{
+  "name": "js-sdk",
+  "version": "1.0.0",
+  "description": "a browser web js sdk",
+  "main": "./dist/js-sdk.umd.js",
+  "scripts": {
+    "dev": "rimraf dist && cross-env NODE_ENV=dev node rollup.config.js",
+    "build": "rimraf dist && cross-env NODE_ENV=prod  node rollup.config.js"
+  },
+  "keywords": [],
+  "author": "huahaoworkspace@163.com",
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-image": "^2.0.4",
+    "autoprefixer": "^9.7.6",
+    "cross-env": "^7.0.2",
+    "ora": "^4.0.4",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.6.1",
+    "rollup-plugin-alias": "^2.2.0",
+    "rollup-plugin-buble": "^0.19.8",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^5.3.0",
+    "rollup-plugin-typescript": "^1.0.1",
+    "tslib": "^2.0.1",
+    "typescript": "^4.0.2"
+  },
+  "dependencies": {}
+}
