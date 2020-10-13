@@ -9,7 +9,7 @@
   },
   "keywords": [],
   "author": "huahaoworkspace@163.com",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@rollup/plugin-image": "^2.0.4",
     "autoprefixer": "^9.7.6",
