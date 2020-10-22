@@ -1,4 +1,5 @@
-type mergeType = string | number;
+import { mergeType } from './types/index';
+ 
 export default class JSSDK {
     
    /** 
@@ -7,6 +8,5 @@ export default class JSSDK {
    isTelephone(phone: mergeType): boolean {
        return /^1[3,4,5,6,7,8,9][0-9]{9}$/.test(phone.toString());
    }
-
 
 }

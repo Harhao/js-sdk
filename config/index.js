@@ -38,11 +38,19 @@ const inputOptions = {
   ],
 };
 
-const output = {
+const output = [{
   name: "js-sdk",
   file: "dist/js-sdk.umd.js",
   format: "umd"
-};
+}, {
+  name: "js-sdk",
+  file: "dist/js-sdk.common.js",
+  format: "commonjs"
+}, {
+  name: "js-sdk",
+  file: "dist/js-sdk.esm.js",
+  format: "esm"
+}];
 const exportModule = {
   ...inputOptions,
   output,

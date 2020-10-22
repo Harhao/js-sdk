@@ -1,7 +1,5 @@
+import { extendHTMLELEMENT } from './types/index';
 
-interface extendHTMLELEMENT extends HTMLLIElement {
-    [keyName: string]: any
-}
 export default class Browser {
     // 回滚到头部
     scrollToTop(): void {

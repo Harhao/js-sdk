@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src='../dist/js-sdk.umd.js'></script>
+    <script>
+        const vm = new library.EventEmitter()
+        vm.$once('hello', function(msg) {
+            console.log('hello' + msg)
+        })
+        vm.$emit('hello')
+    </script>
+</body>
+</html>
