@@ -3,6 +3,13 @@ export default class EventEmitter {
     constructor() {
         this.cbs = {};
     }
+    /**
+     * 
+     * @param eventName 自定义的事件名
+     * @param cb 自定义事件的回调函数
+     * @param isOnce 是否只进行一次绑定
+     * @return void
+     */
     public on(eventName:string, cb: Function, isOnce: Boolean = false): void {
         !this.isContain(eventName) && (this.cbs[eventName] = {
             isOnce,
@@ -10,6 +17,12 @@ export default class EventEmitter {
         });
         !this.cbs[eventName]['events'].includes(cb) ? this.cbs[eventName]['events'].push(cb) : console.error('The Function has Already add');
     }
+    /**
+     * 
+     * @param eventName 要触发的事件名字
+     * @param args 可选，需要传入事件参数
+     * @return void
+     */
     public emit(eventName: string, ...args: Array<any>): void {
         if (eventName in this.cbs) {
             this.cbs[eventName]['events'].forEach( eventListener => {
@@ -18,11 +31,21 @@ export default class EventEmitter {
             this.cbs[eventName]['isOnce'] && this.remove(eventName)
         }
     }
+    /**
+     * 
+     * @param eventName 需要绑定的事件名称
+     * @param cb 事件需要绑定的事件回调
+     * @return void
+     */
     public once(eventName:string, cb: Function): void {
         this.on(eventName, cb, true)
     }
-    // 函数重载
-    public remove(eventName:string): void
+    /**
+     * 
+     * @param eventName 可选，需要移除的事件名称。如果缺省，删除所有的事件注册
+     * @param cb 可选，需要移除的事件回调。如果缺省，删除该事件名下所有事件注册
+     * @return void
+     */
     public remove(eventName:string, cb?: Function): void {
         if (eventName && eventName in this.cbs) {
             if (!cb) {
