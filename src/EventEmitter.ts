@@ -7,7 +7,6 @@ export default class EventEmitter {
      * 
      * @param eventName 自定义的事件名
      * @param cb 自定义事件的回调函数
-     * @param isOnce 是否只进行一次绑定
      * @return void
      */
     public on(eventName:string, cb: Function, isOnce: Boolean = false): void {
@@ -23,7 +22,7 @@ export default class EventEmitter {
      * @param args 可选，需要传入事件参数
      * @return void
      */
-    public emit(eventName: string, ...args: Array<any>): void {
+    public emit(eventName: string, ...args: Array<unknown>): void {
         if (eventName in this.cbs) {
             this.cbs[eventName]['events'].forEach( eventListener => {
                 eventListener.call(null, ...args);
