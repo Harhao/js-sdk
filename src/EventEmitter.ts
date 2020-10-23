@@ -23,7 +23,7 @@ export default class EventEmitter {
      * @return void
      */
     public emit(eventName: string, ...args: Array<unknown>): void {
-        if (eventName in this.cbs) {
+        if ( this.cbs.hasOwnProperty(eventName)) {
             this.cbs[eventName]['events'].forEach( eventListener => {
                 eventListener.call(null, ...args);
             })
@@ -58,6 +58,6 @@ export default class EventEmitter {
         }
     }
     private isContain(key:string): Boolean {
-        return key in this.cbs;
+        return this.cbs.hasOwnProperty(key);
     }
 }
